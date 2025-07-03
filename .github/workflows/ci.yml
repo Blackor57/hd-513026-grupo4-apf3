@@ -17,3 +17,4 @@ jobs:
           test -d js
           test -d partials
           test -d img
+          test -f eventos.html
