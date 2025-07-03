@@ -23,32 +23,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const contenedor = document.getElementById('cards-container');
 
     tarjetas.forEach(tarjeta => {
+        // Wrapper de la tarjeta, equivalente a col-md-4
         const col = document.createElement('div');
-        col.className = 'col-md-4 mb-4'; // Cada tarjeta ocupa 1/3 de fila
+        col.className = 'custom-col';
 
+        // Card principal
         const card = document.createElement('div');
         card.className = 'card';
-        card.style.minHeight = '300px';
-        card.style.height = '300px';
+        card.style.height = '300px';  // Mantener altura fija
 
+        // Fila horizontal (flex)
         const row = document.createElement('div');
-        row.className = 'row g-0 h-100';
+        row.className = 'custom-row-horizontal';
 
+        // Contenedor imagen (1/3)
         const colImg = document.createElement('div');
-        colImg.className = 'col-md-4 h-100';
+        colImg.className = 'custom-col-img';
 
         const img = document.createElement('img');
         img.src = tarjeta.imagen;
-        img.className = 'img-fluid rounded-start h-100 object-fit-cover';
+        img.className = 'custom-img';
         img.alt = tarjeta.titulo;
 
         colImg.appendChild(img);
 
+        // Contenedor contenido (2/3)
         const colContent = document.createElement('div');
-        colContent.className = 'col-md-8 h-100';
+        colContent.className = 'custom-col-content';
 
         const cardBody = document.createElement('div');
-        cardBody.className = 'card-body d-flex flex-column justify-content-center h-100';
+        cardBody.className = 'custom-card-body';
 
         const titulo = document.createElement('h5');
         titulo.className = 'card-title';
@@ -59,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         descripcion.textContent = tarjeta.descripcion;
 
         const lastUpdated = document.createElement('p');
-        lastUpdated.className = 'card-text';
-        lastUpdated.innerHTML = `<small class="text-muted">${tarjeta.actualizado}</small>`;
+        lastUpdated.className = 'card-text last-updated';
+        lastUpdated.innerHTML = `<small>${tarjeta.actualizado}</small>`;
 
         cardBody.appendChild(titulo);
         cardBody.appendChild(descripcion);
@@ -70,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         row.appendChild(colImg);
         row.appendChild(colContent);
+
         card.appendChild(row);
         col.appendChild(card);
         contenedor.appendChild(col);
