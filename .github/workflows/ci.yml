@@ -19,3 +19,4 @@ jobs:
           test -d img
           test -f eventos.html
           test -f inforDinos.html
+          test -f sectionNoticias.html
