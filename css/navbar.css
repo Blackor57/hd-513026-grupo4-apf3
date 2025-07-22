@@ -7,13 +7,13 @@
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px) saturate(150%);
   -webkit-backdrop-filter: blur(8px) saturate(150%);
-  z-index: 10;
+  z-index: 0;
   pointer-events: none;
 }
 
 .navbar {
   margin-top: 50px;
-  position: absolute;
+  /* position: absolute; */
   background: url("/img/metal-texture.jpg") repeat; /* Repite la imagen en todo el navbar */
   background-size: 100px 100px; /* Ajusta el tamaño de cada imagen repetida */
   padding: 1.5rem 0;
@@ -74,7 +74,7 @@
 /* Logo centrado */
 .logo-container {
   position: absolute;
-  bottom: -30px;
+  /* bottom: -30px; */
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
